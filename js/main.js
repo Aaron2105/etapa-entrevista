@@ -1,11 +1,11 @@
 // main.js
-import { mostrar, ocultar, initModalEvents, abrirModalSala, resetGlobos, cerrarGlobo } from './dom.js';
+import { ocultar, initModalEvents, abrirModalSala, resetGlobos, crearModalBienvenida } from './dom.js';
 import { toggleSonido, reproducirMusicaFondo } from './sonido.js';
 import { actualizarGlobo, obtenerNombreGlobo } from './dialogos.js';
-import { initCanvas } from './canvas.js';
 import { escenas } from './escenas.js';
 import { playFluidSpeechSound } from './sonido.js';
 import { CharacterManager } from './characterManager.js';
+import { initCanvas } from './canvas.js';
 
 let escenaActual = 0;
 
@@ -21,13 +21,9 @@ document.querySelector('.btn-sonido').addEventListener('click', function() {
     }
 });
 
-document.getElementById('globo-itzel').querySelector('.globo-cerrar').addEventListener('click', () => cerrarGlobo(document.getElementById('globo-itzel')));
-document.getElementById('globo-tito').querySelector('.globo-cerrar').addEventListener('click', () => cerrarGlobo(document.getElementById('globo-tito')));
-document.getElementById('globo-psicologa').querySelector('.globo-cerrar').addEventListener('click', () => cerrarGlobo(document.getElementById('globo-psicologa')));
-
-
 // Inicialización de canvas y modales
 document.addEventListener("DOMContentLoaded", () => {
+    crearModalBienvenida();
     initCanvas();
     initModalEvents();
     
@@ -56,48 +52,40 @@ export function avanzarEscena() {
 
     if (escena.texto != null) {
         actualizarGlobo(escena, obtenerNombreGlobo(escena.personaje), escena.texto, function() {
-            const personajeElemento = document.getElementById(escena.next);
-            if (escena.next.startsWith('btn-')) {
-                document.getElementById(escena.next).classList.add('animacion');
-            } else if (personajeElemento) {
-                const img = personajeElemento.querySelector('img');
-                if (img) img.classList.add('animacion');
-            }
-
-            if (personajeElemento) personajeElemento.onclick = async () => {
-                if (escena.alClic) {
-                    const resultado = escena.alClic();
-                    if (resultado instanceof Promise) await resultado;
-                }
-                escenaActual++;
-                avanzarEscena();
-            };
+            prepararSiguienteAccion(escena);
         });
     } else {
-        const personajeElemento = document.getElementById(escena.next);
-        if (personajeElemento) {
-            const img = personajeElemento.querySelector('img');
-            if (img) img.classList.add('animacion');
-            personajeElemento.onclick = () => {
-                if (escena.alClic) {
-                    // Pasar escenaActual a las funciones alClic
-                    const resultado = escena.alClic(escenaActual);
-                    if (resultado instanceof Promise) resultado;
-                }
-                escenaActual++;
-                avanzarEscena();
-            };
-        }
+        prepararSiguienteAccion(escena);
     }
 }
 
-// Botones estáticos
-document.getElementById("understand-btn").onclick = () => {
-    ocultar("instructions-modal");
-    mostrar("paleta-colores");
-    mostrar("done-btn");
-    mostrar("modo-container");
-};
+function prepararSiguienteAccion(escena) {
+    // 1. Encontrar el siguiente elemento
+    const personajeElemento = document.getElementById(escena.next);
+    if (!personajeElemento) return; // Salir si no hay "next"
+
+    // 2. Aplicar animación
+    if (escena.next.startsWith('btn-')) {
+        personajeElemento.classList.add('animacion');
+    } else {
+        const img = personajeElemento.querySelector('img');
+        if (img) img.classList.add('animacion');
+    }
+
+    // 3. Asignar el handler ONCLICK (con el bug corregido)
+    personajeElemento.onclick = async () => {
+        // Ejecutar la acción de la escena (si existe)
+        if (escena.alClic) {
+            const resultado = escena.alClic(escenaActual);
+            // AQUÍ CORREGIMOS EL BUG: usamos await
+            if (resultado instanceof Promise) await resultado;
+        }
+        
+        // Avanzar a la siguiente escena
+        escenaActual++;
+        avanzarEscena();
+    };
+}
 
 document.getElementById("done-btn").onclick = () => {
     ocultar("paleta-colores");

@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  background: var(--bg-black);
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+#game-canvas {
+  aspect-ratio: 16 / 9;
+  max-height: 100%;
+  position: relative;
+  width: 100%;
+  /* Nota: Asumiendo que style.css está en la carpeta css, subimos un nivel para llegar a img */
+  background: url(../img/Varios/bg2.png) center/cover no-repeat;
+}
+
+/* Clases de utilidad */
+.hidden { display: none !important; }
+.visible { display: block !important; }

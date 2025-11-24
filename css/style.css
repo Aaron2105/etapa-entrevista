@@ -1,0 +1,7 @@
+/* css/style.css */
+@import url('variables.css');
+@import url('base.css');
+@import url('components.css');
+@import url('characters.css');
+@import url('game.css');
+@import url('responsive.css');

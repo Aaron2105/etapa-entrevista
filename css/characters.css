@@ -1,0 +1,90 @@
+/* Clases Generales de Personajes */
+.element, .element2 {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.element:hover, .element2:hover { transform: scale(1.02); }
+
+.personaje img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.element.personaje img[src=""], .element2.personaje img[src=""] { display: none; }
+
+/* Animaciones */
+.animacion { animation: bounce 1s infinite; }
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes hablar {
+  0% { transform: rotate(-2deg) translateY(0px); }
+  25% { transform: rotate(2deg) translateY(-1px); }
+  50% { transform: rotate(-1deg) translateY(-0.5px); }
+  75% { transform: rotate(1deg) translateY(-1px); }
+  100% { transform: rotate(-2deg) translateY(0px); }
+}
+
+@keyframes cabezaHablando {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@keyframes moverCabeza {
+  0% { transform: rotate(-5deg) translateX(-2px); }
+  25% { transform: rotate(5deg) translateX(2px); }
+  50% { transform: rotate(-3deg) translateX(-1px); }
+  75% { transform: rotate(4deg) translateX(1px); }
+  100% { transform: rotate(-5deg) translateX(-2px); }
+}
+
+.cabeza-hablando { animation: cabezaHablando 0.25s ease-in-out infinite; }
+.hablando { animation: hablar 1.0s ease-in-out infinite; transform-origin: center bottom; }
+.animacion-cabeza-hablando { animation: moverCabeza 0.6s ease-in-out infinite; transform-origin: center bottom; }
+
+.sombra {
+  filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.5));
+  transition: all 0.3s ease;
+}
+.sombra:hover { filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.3)); }
+
+/* POSICIONES BASE (Se modifican en responsive.css) */
+
+/* TITO */
+#tito1 { position: absolute; top: 39%; left: 10.7%; height: 55%; }
+#tito2 { position: absolute; top: 42.1%; left: 10.6%; width: 13%; }
+#tito3, #tito4 { position: absolute; top: 42%; left: 10.7%; width: 13.2%; }
+
+/* PSICÓLOGAS */
+#psicologa1 { position: absolute; top: 29%; left: 42.2%; width: 15.4%; }
+#psicologa2 { position: absolute; top: 40.6%; left: 34%; width: 10.2%; }
+#psicologa3 { position: absolute; top: 43.3%; left: 34%; width: 12.2%; }
+#psicologa4 { position: absolute; top: 39.8%; left: 34.3%; width: 10.2%; }
+#psicologa5 { position: absolute; top: 39.7%; left: 34.7%; width: 11.6%; }
+#psicologa6 { position: absolute; top: 38.7%; left: 36.4%; width: 14%; }
+
+/* ITZEL */
+#itzel1 { position: absolute; top: 48%; right: 22%; width: 11.7%; }
+#itzel2 { position: absolute; top: 45%; left: 57%; width: 8.3%; }
+#itzel3 { position: absolute; top: 46.4%; left: 57%; width: 8%; }
+#itzel4 { position: absolute; top: 49%; left: 55.2%; width: 10.3%; }
+#itzel5 { position: absolute; top: 49%; left: 56.8%; width: 7.3%; }
+#itzel6 { position: absolute; top: 49.6%; left: 57.2%; width: 7.2%; }
+#itzel7 { position: absolute; top: 49.2%; left: 57.5%; width: 7.5%; }
+#itzel8 { position: absolute; top: 47%; left: 57.4%; width: 7.7%; }
+#itzel9 { position: absolute; top: 43.9%; left: 51.5%; width: 7.8%; }
+
+/* EXTRAS */
+#abogado { position: absolute; top: 30%; left: 45%; width: 11%; }
+#abogada { position: absolute; top: 29.7%; left: 45.3%; width: 10.2%; }
+#psicologo { position: absolute; top: 26.5%; left: 42%; width: 14.5%; }
+
+/* CABEZAS */
+.cabeza-tito { position: absolute; top: 42.78%; left: 3.44%; width: 2%; }
+.cabeza-psicologa { position: absolute; top: 41.39%; left: 28.07%; width: 3.58%; height: 5.76%; }
+.cabeza-itzel { position: absolute; top: 46.57%; left: 49.21%; width: 2.75%; height: 5.96%; }

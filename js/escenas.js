@@ -3,6 +3,8 @@ import { mostrar, ocultar } from './dom.js';
 import { inicializarObjetos, inicializarLaptop, limpiarObjetosComida, ocultarLaptop } from './objetos.js';
 import { animarItzelHablando } from './main.js';
 import { CharacterManager } from './characterManager.js';
+import { crearJuegoDeDibujo, asignarEventosJuegoDibujo } from './juego.js';
+import { initPaletaColores } from './canvas.js';
 
 export const escenas = [
   {
@@ -170,7 +172,7 @@ export const escenas = [
     personaje: "itzel6",
     texto: "Don Chucho es un vecino que me hizo algo que no me gustó…",
     next: "itzel6",
-    alClic: (escenaActual) => {
+    alClic: () => {
       return animarItzelHablando();
     }
   },
@@ -194,7 +196,7 @@ export const escenas = [
     personaje: "psicologa4",
     texto: "¡Eres muy valiente!",
     next: "tito3",
-    alClic: (escenaActual) => {
+    alClic: () => {
       ocultar("globo-psicologa");
     }
   },
@@ -242,6 +244,7 @@ export const escenas = [
       ocultar("sala-entrevista");
       mostrar("nube-juego");
       mostrar("colorear");
+      crearJuegoDeDibujo();
       CharacterManager.eliminarPersonaje("itzel9");
       CharacterManager.eliminarPersonaje("psicologa6");
       limpiarObjetosComida();
@@ -260,11 +263,15 @@ export const escenas = [
     personaje: "tito2",
     texto: "Ahora, vamos a darle color a este recuerdo para hacerlo aún más bonito. Puedes elegir los colores que quieras y colorear donde más te guste.",
     next: "tito2",
-    alClic: (escenaActual) => {
+    alClic: async (escenaActual) => {
       ocultar("globo-tito");
       CharacterManager.cambiarPersonaje("tito2", "tito1", escenaActual);
       mostrar("colorear");
+      mostrar("modo-container");
+      mostrar("paleta-colores");
       mostrar("instructions-modal");
+      initPaletaColores();
+      await asignarEventosJuegoDibujo();
     }
   },
   {

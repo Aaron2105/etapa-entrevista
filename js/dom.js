@@ -1,5 +1,6 @@
 // dom.js
 import { CharacterManager } from './characterManager.js';
+import { reproducirMusicaFondo } from './sonido.js';
 
 export function mostrar(id) {
     // Si es un personaje dinámico, usar CharacterManager
@@ -69,9 +70,44 @@ export function cerrarModal() {
     modal.classList.add('hidden');
 }
 
+export function cerrarModalBienvenida() {
+    const modal = document.getElementById('bienvenida-modal');
+    modal.classList.add('hidden');
+    reproducirMusicaFondo();
+}
+
 // Cerrar modal al hacer clic fuera del contenido o con Escape
 export function initModalEvents() {
     const modal = document.getElementById('modal-sala');
     modal.addEventListener('click', e => { if (e.target === modal) cerrarModal(); });
     document.addEventListener('keydown', e => { if (e.key === 'Escape') cerrarModal(); });
+}
+
+export function crearModalBienvenida() {
+    const modal = document.getElementById('bienvenida-modal');
+    const modalContenido = modal.querySelector('.modal-contenido');
+
+    modalContenido.innerHTML = `
+        <button class="modal-cerrar">×</button>
+        <h2 class="modal-titulo">Bienvenido/a</h2>
+        <div class="modal-imagen">
+            <video id="video-bienvenida" width="100%" autoplay muted loop playsinline>
+                <source src="img/Varios/tutorial.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="modal-descripcion">
+            BIENVENIDO a Explora el Tribunal, una experiencia
+            interactiva de la Fiscalía General del Estado de Yucatán.
+            Para continuar con la progresión de la historia,
+            deberás hacer click en los objetos que pulsen.
+        </div>
+        <div class="modal-footer animacion">
+            <button id="btn-jugar" class="btn-jugar">Jugar</button>
+        </div>
+    `;
+    modal.classList.remove('hidden');
+    const cerrarBtn = modalContenido.querySelector('.modal-cerrar');
+    cerrarBtn.addEventListener('click', cerrarModalBienvenida);
+    const btnJugar = document.getElementById('btn-jugar');
+    btnJugar.addEventListener('click', cerrarModalBienvenida);
 }

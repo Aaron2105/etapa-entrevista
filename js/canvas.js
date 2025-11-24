@@ -11,16 +11,14 @@ export function initCanvas() {
   ctx = canvas.getContext("2d");
   svgObject = document.getElementById("colorearSVG");
 
-  // Modo por defecto: relleno
   canvas.style.pointerEvents = "none";
 
   initToggleModo();
-  initPaletaColores();
   initSVGFill();
   initDibujoLibre();
 }
 
-function initToggleModo() {
+export function initToggleModo() {
   const toggleSwitch = document.getElementById("modoToggle");
   toggleSwitch.addEventListener("click", () => {
     if (modo === "relleno") {
@@ -37,7 +35,7 @@ function initToggleModo() {
   });
 }
 
-function initPaletaColores() {
+export function initPaletaColores() {
   document.querySelectorAll("#paleta-colores .element").forEach(el => {
     el.addEventListener("click", () => {
       colorSeleccionado = el.dataset.color;
@@ -45,7 +43,7 @@ function initPaletaColores() {
   });
 }
 
-function initSVGFill() {
+export function initSVGFill() {
   svgObject.addEventListener("load", () => {
     const svgDoc = svgObject.contentDocument;
     const paths = svgDoc.querySelectorAll("[id]");
@@ -60,7 +58,7 @@ function initSVGFill() {
   });
 }
 
-function initDibujoLibre() {
+export function initDibujoLibre() {
   canvas.addEventListener("mousedown", e => {
     if (modo !== "linea") return;
     pintando = true;
