@@ -136,13 +136,6 @@ El `CharacterManager` implementa una estrategia de **Pre-fetching predictivo**. 
 
 Desarrollado en colaboración para la **Universidad Autónoma de Yucatán (UADY)** y la **Fiscalía General del Estado de Yucatán**.
 
-  * **Ingeniería Frontend & Arquitectura:** [Tu Nombre / Usuario]
-  * **Diseño Gráfico & Arte:** [Nombre del Artista]
-  * **Guion & Asesoría Psicológica:** [Equipo de Psicología]
-
 -----
 
 © Todos los derechos reservados. Prohibida su reproducción total o parcial sin autorización expresa.
-
-```
-```
