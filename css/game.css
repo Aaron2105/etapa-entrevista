@@ -1,4 +1,6 @@
-/* Área Juego */
+/* game.css - Drawing Mini-game Styles */
+
+/* Game Area */
 #nube-juego {
   position: absolute;
   top: 0%;
@@ -52,6 +54,7 @@
   justify-content: center;
 }
 
+/* Note: .modo-linea and .modo-relleno kept to match JS logic logic */
 .toggle-switch.modo-linea .toggle-slider { left: calc(50% - 4px); }
 
 .toggle-images {
@@ -84,7 +87,8 @@
   display: flex;
 }
 
-/* Objetos Varios */
+/* Miscellaneous Objects */
+/* Note: .pan, .agua classes kept to match HTML IDs */
 #nube-pensamiento { position: absolute; top: 25%; left: 45.21%; width: 14%; }
 .laptop { position: absolute; top: 62%; left: 45.28%; width: 4%; }
 .agua { position: absolute; top: 62.5%; left: 52.5%; width: 2.5%; }
@@ -93,7 +97,7 @@
 .jarra { position: absolute; top: 54%; left: 75%; width: 5.2%; }
 #recuerdo1, #recuerdo2 { position: absolute; top: 3.5%; left: 18.4%; width: 63%; }
 
-/* Animaciones Objetos */
+/* Animations */
 @keyframes agrandarLaptop {
   0% { transform: scale(1); }
   25% { transform: scale(1.1); }
@@ -103,7 +107,7 @@
 }
 .animacion-laptop { animation: agrandarLaptop 0.7s ease-in-out; }
 
-/* Paleta de Colores */
+/* Color Palette */
 #paleta-colores {
   position: relative;
   top: 2%;          
@@ -131,7 +135,7 @@
   object-fit: contain;
 }
 
-/* Posiciones Colores Base */
+/* Base Color Positions */
 #color-verde { left: 24.2%; }
 #color-verde-fuerte{ left: 27.6%; }
 #color-amarillo { left: 31%; }

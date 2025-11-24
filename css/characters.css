@@ -1,19 +1,24 @@
-/* Clases Generales de Personajes */
+/* characters.css - Character & Animation Styles */
+
 .element, .element2 {
   cursor: pointer;
   transition: transform 0.3s ease;
 }
 .element:hover, .element2:hover { transform: scale(1.02); }
 
-.personaje img {
+/* Main character container */
+/* Renamed from .personaje */
+.character img {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
-.element.personaje img[src=""], .element2.personaje img[src=""] { display: none; }
+/* Hide if no source */
+.element.character img[src=""], .element2.character img[src=""] { display: none; }
 
-/* Animaciones */
+/* --- Animations --- */
+
 .animacion { animation: bounce 1s infinite; }
 
 @keyframes bounce {
@@ -43,24 +48,27 @@
   100% { transform: rotate(-5deg) translateX(-2px); }
 }
 
+/* JS-triggered animation classes */
 .cabeza-hablando { animation: cabezaHablando 0.25s ease-in-out infinite; }
 .hablando { animation: hablar 1.0s ease-in-out infinite; transform-origin: center bottom; }
 .animacion-cabeza-hablando { animation: moverCabeza 0.6s ease-in-out infinite; transform-origin: center bottom; }
 
-.sombra {
+/* Shadow effect */
+/* Renamed from .sombra */
+.shadow {
   filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.5));
   transition: all 0.3s ease;
 }
-.sombra:hover { filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.3)); }
+.shadow:hover { filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.3)); }
 
-/* POSICIONES BASE (Se modifican en responsive.css) */
+/* --- Base Positions (Responsive overrides in responsive.css) --- */
 
 /* TITO */
 #tito1 { position: absolute; top: 39%; left: 10.7%; height: 55%; }
 #tito2 { position: absolute; top: 42.1%; left: 10.6%; width: 13%; }
 #tito3, #tito4 { position: absolute; top: 42%; left: 10.7%; width: 13.2%; }
 
-/* PSICÓLOGAS */
+/* PSYCHOLOGISTS */
 #psicologa1 { position: absolute; top: 29%; left: 42.2%; width: 15.4%; }
 #psicologa2 { position: absolute; top: 40.6%; left: 34%; width: 10.2%; }
 #psicologa3 { position: absolute; top: 43.3%; left: 34%; width: 12.2%; }
@@ -84,7 +92,7 @@
 #abogada { position: absolute; top: 29.7%; left: 45.3%; width: 10.2%; }
 #psicologo { position: absolute; top: 26.5%; left: 42%; width: 14.5%; }
 
-/* CABEZAS */
+/* HEADS */
 .cabeza-tito { position: absolute; top: 42.78%; left: 3.44%; width: 2%; }
 .cabeza-psicologa { position: absolute; top: 41.39%; left: 28.07%; width: 3.58%; height: 5.76%; }
 .cabeza-itzel { position: absolute; top: 46.57%; left: 49.21%; width: 2.75%; height: 5.96%; }

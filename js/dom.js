@@ -1,53 +1,85 @@
 // dom.js
 import { CharacterManager } from './characterManager.js';
-import { reproducirMusicaFondo } from './sonido.js';
+import { playBackgroundMusic } from './sound.js';
 
-export function mostrar(id) {
-    // Si es un personaje dinámico, usar CharacterManager
-    if (CharacterManager.personajesConfig[id]) {
-        return CharacterManager.mostrarPersonaje(id);
+/**
+ * Shows a DOM element or a managed character by its ID.
+ * Delegates to CharacterManager if the ID belongs to a character configuration.
+ * * @param {string} id - The ID of the element or character to show.
+ */
+export function show(id) {
+    // Check if it's a character managed by the system
+    // Note: We assume 'personajesConfig' will be renamed to 'characterConfig' 
+    // in the upcoming refactor of characterManager.js
+    if (CharacterManager.characterConfig && CharacterManager.characterConfig[id]) {
+        return CharacterManager.showCharacter(id);
     }
     
-    // Para elementos estáticos, usar lógica original
-    const el = document.getElementById(id);
-    if (!el) return;
-    el.classList.remove('hidden');
-    el.classList.add('visible');
+    // Fallback for static DOM elements
+    const element = document.getElementById(id);
+    if (!element) return;
+    
+    element.classList.remove('hidden');
+    element.classList.add('visible');
 }
 
-export function ocultar(id) {
-    // Si es un personaje dinámico, eliminar completamente
-    if (CharacterManager.personajesConfig[id]) {
-        return CharacterManager.eliminarPersonaje(id);
+/**
+ * Hides a DOM element or a managed character by its ID.
+ * * @param {string} id - The ID of the element or character to hide.
+ */
+export function hide(id) {
+    // Check if it's a character managed by the system
+    if (CharacterManager.characterConfig && CharacterManager.characterConfig[id]) {
+        return CharacterManager.removeCharacter(id);
     }
     
-    // Para elementos estáticos, solo ocultar
-    const el = document.getElementById(id);
-    if (!el) return;
-    el.classList.add('hidden');
-    el.classList.remove('visible');
+    // Fallback for static DOM elements
+    const element = document.getElementById(id);
+    if (!element) return;
+    
+    element.classList.add('hidden');
+    element.classList.remove('visible');
 }
 
-export function resetGlobos() {
-    ["tito", "itzel", "psicologa"].forEach(nombre => {
-        const globo = document.getElementById(`globo-${nombre}`);
-        if (globo) {
-            globo.classList.remove("visible");
-            globo.classList.add("hidden");
+/**
+ * Resets (hides) the speech bubbles for the main characters.
+ * Currently targets specific IDs: 'globo-tito', 'globo-itzel', 'globo-psicologa'.
+ */
+export function resetSpeechBubbles() {
+    // Note: We keep the HTML IDs (globo-*) as is for now to avoid breaking CSS/HTML linkage.
+    ["tito", "itzel", "psicologa"].forEach(name => {
+        const bubble = document.getElementById(`globo-${name}`);
+        if (bubble) {
+            bubble.classList.remove("visible");
+            bubble.classList.add("hidden");
         }
     });
 }
 
-export function cerrarGlobo(globo) {
-    globo.classList.add("hidden");
-    const btnDialogo = document.querySelector('.btn-dialogo');
-    if (btnDialogo) btnDialogo.classList.remove('hidden');
+/**
+ * Closes a specific speech bubble element and re-enables the dialogue button.
+ * * @param {HTMLElement} bubbleElement - The speech bubble DOM element to hide.
+ */
+export function closeSpeechBubble(bubbleElement) {
+    if (bubbleElement) {
+        bubbleElement.classList.add("hidden");
+    }
+    const dialogBtn = document.querySelector('.btn-dialogo');
+    if (dialogBtn) dialogBtn.classList.remove('hidden');
 }
 
-export function abrirModalSala() {
+/**
+ * Opens the modal displaying the real-life photo of the interview room.
+ * Dynamically injects the HTML content into the modal container.
+ */
+export function openRoomModal() {
     const modal = document.getElementById('modal-sala');
-    const modalContenido = modal.querySelector('.modal-contenido');
-    modalContenido.innerHTML = `
+    if (!modal) return;
+
+    const modalContent = modal.querySelector('.modal-contenido');
+    
+    // Inject modal content
+    modalContent.innerHTML = `
         <button class="modal-cerrar">×</button>
         <h2 class="modal-titulo">Sala de Entrevista</h2>
         <div class="modal-imagen">
@@ -60,34 +92,60 @@ export function abrirModalSala() {
             De esta manera, si un día llegas a ir, ¡ya sabrás cómo es!
         </div>
     `;
+    
     modal.classList.remove('hidden');
-    const cerrarBtn = modalContenido.querySelector('.modal-cerrar');
-    cerrarBtn.addEventListener('click', cerrarModal);
+    
+    // Attach close event to the newly created button
+    const closeBtn = modalContent.querySelector('.modal-cerrar');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeModal);
+    }
 }
 
-export function cerrarModal() {
+/**
+ * Closes the room photo modal ('modal-sala').
+ */
+export function closeModal() {
     const modal = document.getElementById('modal-sala');
-    modal.classList.add('hidden');
+    if (modal) modal.classList.add('hidden');
 }
 
-export function cerrarModalBienvenida() {
+/**
+ * Closes the initial welcome/tutorial modal and starts the background music.
+ */
+export function closeWelcomeModal() {
     const modal = document.getElementById('bienvenida-modal');
-    modal.classList.add('hidden');
-    reproducirMusicaFondo();
+    if (modal) modal.classList.add('hidden');
+    playBackgroundMusic();
 }
 
-// Cerrar modal al hacer clic fuera del contenido o con Escape
+/**
+ * Initializes global event listeners for modals.
+ * Handles clicking outside the modal and pressing the Escape key.
+ */
 export function initModalEvents() {
     const modal = document.getElementById('modal-sala');
-    modal.addEventListener('click', e => { if (e.target === modal) cerrarModal(); });
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') cerrarModal(); });
+    if (modal) {
+        modal.addEventListener('click', e => { 
+            if (e.target === modal) closeModal(); 
+        });
+    }
+    document.addEventListener('keydown', e => { 
+        if (e.key === 'Escape') closeModal(); 
+    });
 }
 
-export function crearModalBienvenida() {
+/**
+ * Creates and displays the welcome modal with the tutorial video.
+ * Sets up event listeners for the 'Jugar' button and close icon.
+ */
+export function createWelcomeModal() {
     const modal = document.getElementById('bienvenida-modal');
-    const modalContenido = modal.querySelector('.modal-contenido');
+    if (!modal) return;
 
-    modalContenido.innerHTML = `
+    const modalContent = modal.querySelector('.modal-contenido');
+
+    modalContent.innerHTML = `
         <button class="modal-cerrar">×</button>
         <h2 class="modal-titulo">Bienvenido/a</h2>
         <div class="modal-imagen">
@@ -96,7 +154,7 @@ export function crearModalBienvenida() {
             </video>
         </div>
         <div class="modal-descripcion">
-            BIENVENIDO a Explora el Tribunal, una experiencia
+            BIENVENIDO a la Etapa de la Entrevista, una experiencia
             interactiva de la Fiscalía General del Estado de Yucatán.
             Para continuar con la progresión de la historia,
             deberás hacer click en los objetos que pulsen.
@@ -105,9 +163,12 @@ export function crearModalBienvenida() {
             <button id="btn-jugar" class="btn-jugar">Jugar</button>
         </div>
     `;
+    
     modal.classList.remove('hidden');
-    const cerrarBtn = modalContenido.querySelector('.modal-cerrar');
-    cerrarBtn.addEventListener('click', cerrarModalBienvenida);
-    const btnJugar = document.getElementById('btn-jugar');
-    btnJugar.addEventListener('click', cerrarModalBienvenida);
+    
+    const closeBtn = modalContent.querySelector('.modal-cerrar');
+    if (closeBtn) closeBtn.addEventListener('click', closeWelcomeModal);
+    
+    const playBtn = document.getElementById('btn-jugar');
+    if (playBtn) playBtn.addEventListener('click', closeWelcomeModal);
 }

@@ -25,10 +25,8 @@ body {
   max-height: 100%;
   position: relative;
   width: 100%;
-  /* Nota: Asumiendo que style.css está en la carpeta css, subimos un nivel para llegar a img */
   background: url(../img/Varios/bg2.png) center/cover no-repeat;
 }
 
-/* Clases de utilidad */
 .hidden { display: none !important; }
 .visible { display: block !important; }

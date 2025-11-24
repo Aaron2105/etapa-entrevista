@@ -1,3 +1,5 @@
+/* components.css - UI Components & Layout */
+
 /* Header */
 .header {
   background-color: var(--primary);
@@ -51,7 +53,7 @@
   transform: translate(-50%, -50%);
 }
 
-/* Layout General */
+/* General Layout */
 #sala-entrevista {
   position: relative;
   top: 50%;
@@ -88,7 +90,7 @@
   font-family: var(--font-main);
 }
 
-/* Botones UI (Dialogo, Sonido, Galeria) */
+/* UI Buttons (Dialog, Sound, Gallery) */
 .btn-dialogo, .btn-sonido, .btn-galeria {
     padding: 0;
     background-color: transparent;
@@ -112,12 +114,12 @@
     cursor: pointer;
 }
 
-/* Posiciones Base */
+/* Base Positions */
 .btn-dialogo { top: 16%; left: 15%; }
 .btn-sonido { top: 15%; right: 15%; }
 .btn-galeria { bottom: 8%; right: 15%; }
 
-/* Globos de Diálogo */
+/* Speech Bubbles */
 .globo-dialogo {
   position: absolute;
   top: 35%;
@@ -181,7 +183,7 @@
 #globo-psicologa { top: 40%; left: 30%; }
 #globo-itzel { top: 40%; left: 50%; }
 
-/* Modales */
+/* Modals */
 .modal {
   position: fixed;
   top: 119px;
@@ -261,7 +263,7 @@
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-/* Modal Overlay Genérico */
+/* Generic Modal Overlay */
 .modal-overlay {
   position: fixed;
   top: 0;

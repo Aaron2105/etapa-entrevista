@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -8,67 +8,58 @@
 </head>
 <body>
     <div id="game-canvas">
-      <!-- Header -->
       <header class="header">
         <div class="header-icon">
           <a href="https://app.prevencionamigable.com.mx/#games">
-            <img src="img/Varios/green-arrow.png" alt="Volver" />
+            <img src="img/Varios/green-arrow.png" alt="Go Back" />
           </a>
         </div>
         <div class="header-nube">
-          <img src="img/Varios/yellow-cloud.png" alt="Nube de header" />
+          <img src="img/Varios/yellow-cloud.png" alt="Header Cloud" />
           <span class="header-text">ETAPA DE ENTREVISTA</span>
         </div>
         <div class="header-icon">
           <a href="https://app.prevencionamigable.com.mx/">
-            <img src="img/Varios/home.png" alt="Inicio" />
+            <img src="img/Varios/home.png" alt="Home" />
           </a>
         </div>
       </header>
 
-      <!-- Fondo principal -->
       <div class="fondo-amarillo">
 
-        <div class="personaje visible" id="sala-entrevista">
-          <img src="img/Varios/Sala_entrevista.jpg" alt="Sala de entrevista" />
+        <div class="character visible" id="sala-entrevista">
+          <img src="img/Varios/Sala_entrevista.jpg" alt="Interview Room" />
         </div>
 
-        <div class="personaje hidden" id="nube-juego">
-          <img src="img/Juego/Nube_juego.png" alt="Nube de juego" />
+        <div class="character hidden" id="nube-juego">
+          <img src="img/Juego/Nube_juego.png" alt="Game Cloud" />
         </div>
 
-        <!-- Laptop -->
-        <div id="contenedor-laptop" class="element personaje laptop">
+        <div id="contenedor-laptop" class="element character laptop">
           <img src="" alt="Laptop" />
         </div>
 
-        <!-- Pan -->
-        <div id="contenedor-pan" class="element2 personaje pan">
-          <img src="" alt="Pan" />
+        <div id="contenedor-pan" class="element2 character pan">
+          <img src="" alt="Bread" />
         </div>
 
-        <!-- Agua -->
-        <div id="contenedor-agua" class="element2 personaje agua">
-          <img src="" alt="Agua" />
+        <div id="contenedor-agua" class="element2 character agua">
+          <img src="" alt="Water" />
         </div>
 
-        <!-- Jarra -->
-        <div id="contenedor-jarra" class="element2 personaje jarra">
-          <img src="" alt="Jarra" />
+        <div id="contenedor-jarra" class="element2 character jarra">
+          <img src="" alt="Jug" />
         </div>
 
-        <!-- Juego -->
-        <div class="personaje hidden" id="colorear">
+        <div class="character hidden" id="colorear">
           <object id="colorearSVG" type="image/svg+xml" data="img/Juego/colorear.svg"></object>
           <canvas id="canvas-colorear" width="500" height="500" style="position:absolute; top:0; left:0;"></canvas>
         </div>
 
-        <!-- Botones de modo -->
-        <div id="modo-container" class="personaje hidden">
+        <div id="modo-container" class="character hidden">
             <div class="toggle-switch modo-relleno" id="modoToggle"></div>
         </div>
 
-        <!-- Paleta de colores -->
         <div class="hidden" id="paleta-colores"></div>
         <div>
           <button class="done-btn hidden" id="done-btn"></button>
@@ -76,35 +67,31 @@
         
       </div>
       
-      <!-- Plantilla del globo de diálogo -->
       <template id="plantilla-globo">
         <div class="globo-dialogo hidden">
           <div class="globo-caja-personaje">
             <span class="globo-nombre"></span>
-            <img src="" alt="Personaje" class="globo-imagen-personaje">
+            <img src="" alt="Character" class="globo-imagen-personaje">
           </div>
           <div class="globo-texto"></div>
-          <img src="img/Varios/X.png" alt="Cerrar" class="globo-cerrar">
+          <img src="img/Varios/X.png" alt="Close" class="globo-cerrar">
         </div>
       </template>
 
-      <!-- Botones de esquinas -->
-      <button class="btn-dialogo hidden sombra" id="btn-dialogo">
-          <img width="115px" src="img/Varios/dialog_3d.png" alt="Imagen de dialogo">
+      <button class="btn-dialogo hidden shadow" id="btn-dialogo">
+          <img width="115px" src="img/Varios/dialog_3d.png" alt="Dialogue Button">
       </button>
-      <button class="btn-sonido visible sombra" id="btn-sonido">
-          <img width="115px" src="img/Varios/sound_on_3d.png" alt="Imagen de sonido">
+      <button class="btn-sonido visible shadow" id="btn-sonido">
+          <img width="115px" src="img/Varios/sound_on_3d.png" alt="Sound Button">
       </button>
-      <button class="btn-galeria visible sombra" id="btn-galeria">
-          <img width="115px" src="img/Varios/gallery_3d.webp" alt="Imagen de galeria">
+      <button class="btn-galeria visible shadow" id="btn-galeria">
+          <img width="115px" src="img/Varios/gallery_3d.webp" alt="Gallery Button">
       </button>
 
-      <!-- Modal para la Foto de la sala de entrevista -->
       <div class="modal-overlay hidden" id="modal-sala">
         <div class="modal-contenido"></div>
       </div>
 
-      <!-- Instrucciones -->
       <div class="modal hidden" id="instructions-modal">
       </div>
 
@@ -112,12 +99,12 @@
         <div class="modal-contenido"></div>
       </div>
 
-      <!-- Footer -->
       <footer class="footer">
-        UNIVERSIDAD AUTÓNOMA DE YUCATÁN | ©TODOS LOS DERECHOS RESERVADOS
+        UNIVERSIDAD AUTÓNOMA DE YUCATÁN | © TODOS LOS DERECHOS RESERVADOS
       </footer>
 
     </div>
+
     <audio class="audio_lobby" src="audio/Tribunales_Amigables_OST_04.mp3" id="audio-lobby"></audio>
     <audio class="audio_tito" src="audio/tito_voice.mp3" id="audio-tito"></audio>
     <audio class="audio_psicologa_itzel" src="audio/itzel_voice.mp3" id="audio-itzel-psic"></audio>
@@ -125,6 +112,7 @@
     <audio class="audio_bite" src="audio/crunchy-bite.mp3" id="audio-bite"></audio>
     <audio class="audio_swallow" src="audio/swallowing.m4a" id="audio-swallow"></audio>
     <audio class="audio_refill" src="audio/pouring_water.m4a" id="audio-refill"></audio>
+
   <script type="module" src="js/main.js"></script>
 </body>
 </html>
