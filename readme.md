@@ -1,6 +1,3 @@
-¡Por supuesto\! Aquí tienes el contenido del `README.md` listo para copiar y pegar. Está diseñado con un enfoque técnico y profesional, resaltando la arquitectura modular que hemos implementado.
-
-````markdown
 # 🏛️ Explora el Tribunal: Etapa de Entrevista
 
 > Una experiencia narrativa interactiva diseñada para guiar a niños y niñas a través del proceso de entrevista en un entorno judicial seguro y amigable.
