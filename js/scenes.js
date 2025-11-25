@@ -6,7 +6,7 @@ import { CharacterManager } from './characterManager.js';
 import { initObjects, initLaptop, clearFoodObjects, hideLaptop } from './objects.js'; // Antes: objetos.js
 import { animateItzelSpeaking } from './main.js'; 
 import { createDrawingGame, assignDrawingGameEvents } from './game.js'; // Antes: juego.js
-import { initColorPalette } from './canvas.js';
+import { initColorPalette, initSVGFill } from './canvas.js';
 
 /**
  * @typedef {Object} Scene
@@ -98,7 +98,7 @@ export const scenes = [
     text: "Antes de empezar quisiera preguntarte... ¿tienes hambre o sed?",
     next: "psicologa2",
     onClick: (currentSceneIndex) => {
-      initObjects(); // Antes: inicializarObjetos()
+      initObjects();
     }
   },
   {
@@ -285,8 +285,9 @@ export const scenes = [
       show("modo-container");
       show("paleta-colores");
       show("instructions-modal");
-      initColorPalette(); // Antes: initPaletaColores()
-      await assignDrawingGameEvents(); // Antes: asignarEventosJuegoDibujo()
+      initColorPalette(); 
+      initSVGFill();
+      await assignDrawingGameEvents();
     }
   },
   {

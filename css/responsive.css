@@ -3526,8 +3526,609 @@
    - 1280x800 (WXGA / Old MacBooks / 16:10)
    ========================================================================== */
 @media (min-width: 1280px) and (max-width: 1365px) {
+
+    @media (max-height: 460px) {
+
+        .modal {
+          top: 80px;
+          height: calc(100% - 80px - 3.5%);
+        }
+
+      #game-canvas {
+        background: url(../img/Varios/bg2.png) bottom/cover no-repeat;
+      }
+
+      .header {
+        height: 80px;
+      }
+
+      .header-icon img {
+        width: 75%;
+      }
+
+      .header-nube img {
+        height: 78px;
+      }
+
+      .header-nube .header-text {
+        font-size: 18px;
+      }
+
+      .toggle-switch {
+        width: 150px;
+        height: 50px;
+      }
+      
+      .btn-dialogo img, .btn-sonido img, .btn-galeria img {
+        height: 70px;
+        width: 70px;
+      }
+      
+      .btn-dialogo {
+        top: 18%;
+        left: 23%;
+      }
+      
+      .btn-sonido {
+        top: 18%;
+        right: 23%;
+      }
+      
+      .btn-galeria {
+        bottom: 10%;
+        right: 23%;
+      }
+      
+      #tito1 {
+        top: 40%;
+        left: 15%;
+        width: 5.5%;
+      }
+      
+      #tito2 {
+        top: 46%;
+        left: 15%;
+        width: 8.6%;
+      }
+      
+      #tito3, #tito4 {
+        top: 43%;
+        left: 15%;
+        width: 8.6%;
+      }
+      
+      
+      #psicologa1 {
+        top: 28%;
+        left: 41.2%;
+        width: 11.5%;
+      }
+      
+      #psicologa2 {
+        top: 42%;
+        left: 37%;
+        width: 7%;
+      }
+      
+      #psicologa3 {
+        top: 45%;
+        left: 36%;
+        width: 9%;
+      }
+      
+      #psicologa4 {
+        top: 40%;
+        left: 37%;
+        width: 7.5%;
+      }
+      
+      #psicologa5 {
+        top: 40%;
+        left: 36%;
+        width: 8.5%;
+      }
+      
+      #psicologa6 {
+        top: 40%;
+        left: 36%;
+        width: 10.5%;
+      }
+      
+      
+      #itzel1 {
+        top: 52%;
+        right: 28%;
+        width: 8%;
+      }
+      
+      #itzel2 {
+        top: 45%;
+        left: 57%;
+        width: 6%;
+      }
+      
+      #itzel3 {
+        top: 45%;
+        left: 57%;
+        width: 6%;
+      }
+      
+      #itzel4 {
+        top: 48%;
+        left: 54%;
+        width: 8%;
+      }
+      
+      #itzel5 {
+        top: 51%;
+        left: 55%;
+        width: 5%;
+      }
+      
+      #itzel6 {
+        top: 51%;
+        left: 56%;
+        width: 5%;
+      }
+      
+      #itzel7 {
+        top: 50%;
+        left: 56%;
+        width: 5.3%;
+      }
+      
+      #itzel8 {
+        top: 48%;
+        left: 56%;
+        width: 5%;
+      }
+      
+      #itzel9 {
+        top: 43%;
+        left: 54%;
+        width: 5.5%;
+      }
+      
+      
+      #abogado {
+        top: 33%;
+        left: 44%;
+        width: 8%;
+      }
+      
+      #abogada {
+        top: 31%;
+        left: 44.3%;
+        width: 7.5%;
+      }
+      
+      #psicologo {
+        top: 32%;
+        left: 43%;
+        width: 9.5%;
+      }
+
+      .globo-dialogo {
+        width: 500px;
+        height: 110px;
+      }
+
+      .globo-caja-personaje {
+        width: 69px;
+        height: 100%;
+        background: rgba(255, 255, 221, 0.25);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 4px 0;
+        box-sizing: border-box;
+        flex-shrink: 0;
+      } 
+
+      #globo-caja-psicologa {
+        width: 80px;
+        height: 100%;
+      }
+
+      .globo-nombre {
+        font-size: 13px;
+      }
+
+      .globo-texto {
+        font-size: 14px;
+      }
+
+      #globo-tito .globo-imagen-personaje {
+        width: 65px;
+      }
+
+      #globo-itzel .globo-imagen-personaje {
+        width: 45px;
+      }
+
+      #globo-psicologa .globo-imagen-personaje {
+        width: 50px;
+      }
+
+      #globo-tito {
+        top: 30%;
+        left: 3%;
+      }
+
+      #globo-psicologa {
+        top: 28%;
+        left: 25%;
+      }
+
+      #globo-itzel {
+        top: 32%;
+        left: 45%;
+      }
+
+      .agua {
+        top: 60%;
+        left: 52%;
+        width: 2.2%;
+      }
+
+      .jarra {
+        top: 50%;
+        left: 66%;
+        width: 4.5%;
+      }
+
+      .pan {
+        top: 65%;
+        left: 49.5%;
+        width: 2.7%;
+      }
+
+      #recuerdo1, #recuerdo2 {
+        top: 1%;
+        left: 15%;
+        width: 55%; 
+      }
+
+      .done-btn {
+        padding: 18px 22px;
+        font-size: 16px;
+        bottom: 12%;
+        left: 84%;
+      }
+
+      #paleta-colores {
+        top: -8%;
+        left: 2%;
+      }
+
+      #nube-juego {
+        position: absolute;
+        top: 0%;
+        left: 15%;
+        width: 75%;
+      }
+
+      #colorear {
+        position: relative;
+        top: -1.5%;
+        left: 30%;
+        width: 34%;
+      }
+
+      #colorear svg,
+      #colorear canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    @media (max-height: 595px) and (min-height: 461px) {
+
+        .modal {
+          top: 80px;
+          height: calc(100% - 80px - 3.5%);
+        }
+
+      #game-canvas {
+        background: url(../img/Varios/bg2.png) bottom/cover no-repeat;
+      }
+
+      .header {
+        height: 80px;
+      }
+
+      .header-icon img {
+        width: 75%;
+      }
+
+      .header-nube img {
+        height: 78px;
+      }
+
+      .header-nube .header-text {
+        font-size: 18px;
+      }
+
+      .toggle-switch {
+        width: 150px;
+        height: 50px;
+      }
+      
+      .btn-dialogo img, .btn-sonido img, .btn-galeria img {
+        height: 70px;
+        width: 70px;
+      }
+      
+      .btn-dialogo {
+        top: 18%;
+        left: 23%;
+      }
+      
+      .btn-sonido {
+        top: 18%;
+        right: 23%;
+      }
+      
+      .btn-galeria {
+        bottom: 10%;
+        right: 23%;
+      }
+      
+      #tito1 {
+        top: 40%;
+        left: 15%;
+        width: 6.5%;
+      }
+      
+      #tito2 {
+        top: 46%;
+        left: 15%;
+        width: 9.6%;
+      }
+      
+      #tito3, #tito4 {
+        top: 43%;
+        left: 15%;
+        width: 9.6%;
+      }
+      
+      
+      #psicologa1 {
+        top: 28%;
+        left: 41.2%;
+        width: 12.5%;
+      }
+      
+      #psicologa2 {
+        top: 42%;
+        left: 37%;
+        width: 8%;
+      }
+      
+      #psicologa3 {
+        top: 45%;
+        left: 36%;
+        width: 10%;
+      }
+      
+      #psicologa4 {
+        top: 40%;
+        left: 37%;
+        width: 8.5%;
+      }
+      
+      #psicologa5 {
+        top: 40%;
+        left: 36%;
+        width: 9.5%;
+      }
+      
+      #psicologa6 {
+        top: 40%;
+        left: 36%;
+        width: 11.5%;
+      }
+      
+      
+      #itzel1 {
+        top: 52%;
+        right: 28%;
+        width: 9%;
+      }
+      
+      #itzel2 {
+        top: 45%;
+        left: 57%;
+        width: 7%;
+      }
+      
+      #itzel3 {
+        top: 45%;
+        left: 57%;
+        width: 7%;
+      }
+      
+      #itzel4 {
+        top: 48%;
+        left: 54%;
+        width: 9%;
+      }
+      
+      #itzel5 {
+        top: 51%;
+        left: 55%;
+        width: 6%;
+      }
+      
+      #itzel6 {
+        top: 51%;
+        left: 56%;
+        width: 6%;
+      }
+      
+      #itzel7 {
+        top: 50%;
+        left: 56%;
+        width: 6.3%;
+      }
+      
+      #itzel8 {
+        top: 48%;
+        left: 56%;
+        width: 6%;
+      }
+      
+      #itzel9 {
+        top: 43%;
+        left: 54%;
+        width: 6.5%;
+      }
+      
+      
+      #abogado {
+        top: 33%;
+        left: 44%;
+        width: 8%;
+      }
+      
+      #abogada {
+        top: 31%;
+        left: 44.3%;
+        width: 7.5%;
+      }
+      
+      #psicologo {
+        top: 32%;
+        left: 43%;
+        width: 9.5%;
+      }
+
+      .globo-dialogo {
+        width: 500px;
+        height: 110px;
+      }
+
+      .globo-caja-personaje {
+        width: 69px;
+        height: 100%;
+        background: rgba(255, 255, 221, 0.25);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 4px 0;
+        box-sizing: border-box;
+        flex-shrink: 0;
+      } 
+
+      #globo-caja-psicologa {
+        width: 80px;
+        height: 100%;
+      }
+
+      .globo-nombre {
+        font-size: 13px;
+      }
+
+      .globo-texto {
+        font-size: 14px;
+      }
+
+      #globo-tito .globo-imagen-personaje {
+        width: 65px;
+      }
+
+      #globo-itzel .globo-imagen-personaje {
+        width: 45px;
+      }
+
+      #globo-psicologa .globo-imagen-personaje {
+        width: 50px;
+      }
+
+      #globo-tito {
+        top: 30%;
+        left: 3%;
+      }
+
+      #globo-psicologa {
+        top: 28%;
+        left: 25%;
+      }
+
+      #globo-itzel {
+        top: 32%;
+        left: 45%;
+      }
+
+      .agua {
+        top: 60%;
+        left: 52%;
+        width: 2.2%;
+      }
+
+      .jarra {
+        top: 50%;
+        left: 68%;
+        width: 5%;
+      }
+
+      .pan {
+        top: 65%;
+        left: 49.5%;
+        width: 2.7%;
+      }
+
+      #recuerdo1, #recuerdo2 {
+        top: 1%;
+        left: 15%;
+        width: 55%; 
+      }
+
+      .done-btn {
+        padding: 18px 22px;
+        font-size: 16px;
+        bottom: 12%;
+        left: 84%;
+      }
+
+      #paleta-colores {
+        top: -8%;
+        left: 2%;
+      }
+
+      #nube-juego {
+        position: absolute;
+        top: 0%;
+        left: 15%;
+        width: 75%;
+      }
+
+      #colorear {
+        position: relative;
+        top: -1.5%;
+        left: 30%;
+        width: 37%;
+      }
+
+      #colorear svg,
+      #colorear canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
     /* Case 3.1: Standard HD (720p) with browser UI (<650px content area) */
-    @media (max-height: 649px) {
+    @media (min-height: 596px) and (max-height: 649px) {
        
       .btn-dialogo img, .btn-sonido img, .btn-galeria img {
         height: 80px;
@@ -4516,9 +5117,309 @@
    Target Width: 1366px - 1439px
    Target Devices: Budget Laptops, Older Office Monitors (1366x768)
    ========================================================================== */
-@media (min-width: 1366px) and (max-width: 1439px) {
+@media (min-width: 1366px) and (max-width: 1440px) {
+      @media (max-height: 595px) {
+
+        .modal {
+          top: 80px;
+          height: calc(100% - 80px - 3.5%);
+        }
+
+      #game-canvas {
+        background: url(../img/Varios/bg2.png) bottom/cover no-repeat;
+      }
+
+      .header {
+        height: 80px;
+      }
+
+      .header-icon img {
+        width: 75%;
+      }
+
+      .header-nube img {
+        height: 78px;
+      }
+
+      .header-nube .header-text {
+        font-size: 18px;
+      }
+
+      .toggle-switch {
+        width: 150px;
+        height: 50px;
+      }
+      
+      .btn-dialogo img, .btn-sonido img, .btn-galeria img {
+        height: 70px;
+        width: 70px;
+      }
+      
+      .btn-dialogo {
+        top: 18%;
+        left: 23%;
+      }
+      
+      .btn-sonido {
+        top: 18%;
+        right: 23%;
+      }
+      
+      .btn-galeria {
+        bottom: 10%;
+        right: 23%;
+      }
+      
+      #tito1 {
+        top: 40%;
+        left: 15%;
+        width: 7.5%;
+      }
+      
+      #tito2 {
+        top: 46%;
+        left: 15%;
+        width: 10.6%;
+      }
+      
+      #tito3, #tito4 {
+        top: 43%;
+        left: 15%;
+        width: 10.6%;
+      }
+      
+      
+      #psicologa1 {
+        top: 28%;
+        left: 41.2%;
+        width: 13%;
+      }
+      
+      #psicologa2 {
+        top: 42%;
+        left: 37%;
+        width: 8%;
+      }
+      
+      #psicologa3 {
+        top: 45%;
+        left: 36%;
+        width: 10%;
+      }
+      
+      #psicologa4 {
+        top: 40%;
+        left: 37%;
+        width: 8.5%;
+      }
+      
+      #psicologa5 {
+        top: 40%;
+        left: 36%;
+        width: 9.5%;
+      }
+      
+      #psicologa6 {
+        top: 40%;
+        left: 36%;
+        width: 11.5%;
+      }
+      
+      
+      #itzel1 {
+        top: 52%;
+        right: 28%;
+        width: 9%;
+      }
+      
+      #itzel2 {
+        top: 45%;
+        left: 57%;
+        width: 7%;
+      }
+      
+      #itzel3 {
+        top: 45%;
+        left: 57%;
+        width: 7%;
+      }
+      
+      #itzel4 {
+        top: 48%;
+        left: 54%;
+        width: 9%;
+      }
+      
+      #itzel5 {
+        top: 51%;
+        left: 55%;
+        width: 6%;
+      }
+      
+      #itzel6 {
+        top: 51%;
+        left: 56%;
+        width: 6%;
+      }
+      
+      #itzel7 {
+        top: 50%;
+        left: 56%;
+        width: 6.3%;
+      }
+      
+      #itzel8 {
+        top: 48%;
+        left: 56%;
+        width: 6%;
+      }
+      
+      #itzel9 {
+        top: 43%;
+        left: 54%;
+        width: 6.5%;
+      }
+      
+      
+      #abogado {
+        top: 33%;
+        left: 44%;
+        width: 9%;
+      }
+      
+      #abogada {
+        top: 31%;
+        left: 44.3%;
+        width: 8.5%;
+      }
+      
+      #psicologo {
+        top: 32%;
+        left: 43%;
+        width: 11.5%;
+      }
+
+      .globo-dialogo {
+        width: 500px;
+        height: 110px;
+      }
+
+      .globo-caja-personaje {
+        width: 69px;
+        height: 100%;
+        background: rgba(255, 255, 221, 0.25);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 4px 0;
+        box-sizing: border-box;
+        flex-shrink: 0;
+      } 
+
+      #globo-caja-psicologa {
+        width: 80px;
+        height: 100%;
+      }
+
+      .globo-nombre {
+        font-size: 13px;
+      }
+
+      .globo-texto {
+        font-size: 14px;
+      }
+
+      #globo-tito .globo-imagen-personaje {
+        width: 65px;
+      }
+
+      #globo-itzel .globo-imagen-personaje {
+        width: 45px;
+      }
+
+      #globo-psicologa .globo-imagen-personaje {
+        width: 50px;
+      }
+
+      #globo-tito {
+        top: 30%;
+        left: 3%;
+      }
+
+      #globo-psicologa {
+        top: 28%;
+        left: 25%;
+      }
+
+      #globo-itzel {
+        top: 32%;
+        left: 45%;
+      }
+
+      .agua {
+        top: 60%;
+        left: 52%;
+        width: 2.2%;
+      }
+
+      .jarra {
+        top: 50%;
+        left: 69%;
+        width: 5%;
+      }
+
+      .pan {
+        top: 65%;
+        left: 49.5%;
+        width: 2.7%;
+      }
+
+      #recuerdo1, #recuerdo2 {
+        top: 1%;
+        left: 15%;
+        width: 60%; 
+      }
+
+      .done-btn {
+        padding: 18px 22px;
+        font-size: 16px;
+        bottom: 12%;
+        left: 84%;
+      }
+
+      #paleta-colores {
+        top: -8%;
+        left: 2%;
+      }
+
+      #nube-juego {
+        position: absolute;
+        top: 0%;
+        left: 15%;
+        width: 75%;
+      }
+
+      #colorear {
+        position: relative;
+        top: -1.5%;
+        left: 30%;
+        width: 39%;
+      }
+
+      #colorear svg,
+      #colorear canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      }
+
     /* Case 4.1: Restricted Work Area (Heavy UI bars) (<630px) */
-    @media (max-height: 629px) { 
+    @media (min-height: 596px) and (max-height: 629px) { 
        
       .btn-dialogo img, .btn-sonido img, .btn-galeria img {
         height: 70px;
@@ -4752,12 +5653,6 @@
       .pan {
         top: 66%;
         left: 49.5%;
-        width: 2.7%;
-      }
-
-      .pan-chico {
-        top: 67.4%;
-        left: 50%;
         width: 2.7%;
       }
 
@@ -5171,7 +6066,7 @@
     }
 
     /* Case 4.3: Fullscreen Mode (>751px) */
-    @media (min-height: 751px) { 
+    @media (min-height: 751px) and (max-height: 799) { 
        
       .btn-dialogo img, .btn-sonido img, .btn-galeria img {
         height: 85px;
@@ -5496,6 +6391,663 @@
         height: 100%;
       }
     }
+
+    @media (min-height: 800px) and (max-height: 899px) { 
+       
+      .btn-dialogo img, .btn-sonido img, .btn-galeria img {
+        height: 90px;
+        width: 90px;
+      }
+      
+      .btn-dialogo {
+        top: 16%;
+        left: 11%;
+      }
+      
+      .btn-sonido {
+        top: 16%;
+        right: 11%;
+      }
+      
+      .btn-galeria {
+        bottom: 8%;
+        right: 11%;
+      }
+      
+      
+      #tito1 {
+        top: 44%;
+        left: 7%;
+        width: 9%;
+      }
+      
+      #tito2 {
+        top: 50%;
+        left: 7%;
+        width: 12.5%;
+      }
+      
+      #tito3, #tito4 {
+        top: 49%;
+        left: 6%;
+        width: 13%;
+      }
+      
+      
+      #psicologa1 {
+        top: 34%;
+        left: 41.2%;
+        width: 16%;
+      }
+      
+      #psicologa2 {
+        top: 46%;
+        left: 34%;
+        width: 10.5%;
+      }
+      
+      #psicologa3 {
+        top: 47%;
+        left: 34%;
+        width: 13%;
+      }
+      
+      #psicologa4 {
+        top: 43%;
+        left: 33.3%;
+        width: 11%;
+      }
+      
+      #psicologa5 {
+        top: 43.4%;
+        left: 33%;
+        width: 12.2%;
+      }
+      
+      #psicologa6 {
+        top: 43.8%;
+        left: 34%;
+        width: 14.8%;
+      }
+      
+      
+      #itzel1 {
+        top: 54%;
+        right: 23%;
+        width: 11.5%;
+      }
+      
+      #itzel2 {
+        top: 49%;
+        left: 57%;
+        width: 8.5%;
+      }
+      
+      #itzel3 {
+        top: 49%;
+        left: 57%;
+        width: 8.5%;
+      }
+      
+      #itzel4 {
+        top: 52%;
+        left: 56%;
+        width: 10.5%;
+      }
+      
+      #itzel5 {
+        top: 53%;
+        left: 58%;
+        width: 7.5%;
+      }
+      
+      #itzel6 {
+        top: 53%;
+        left: 58%;
+        width: 7.5%;
+      }
+      
+      #itzel7 {
+        top: 51.5%;
+        left: 58.5%;
+        width: 8%;
+      }
+      
+      #itzel8 {
+        top: 51%;
+        left: 58%;
+        width: 8%;
+      }
+      
+      #itzel9 {
+        top: 48%;
+        left: 55%;
+        width: 8%;
+      }
+      
+      
+      #abogado {
+        top: 33%;
+        left: 44%;
+        width: 12%;
+      }
+      
+      #abogada {
+        top: 32%;
+        left: 44.3%;
+        width: 11%;
+      }
+      
+      #psicologo {
+        top: 32%;
+        left: 41%;
+        width: 15%;
+      }
+      
+      
+      .globo-dialogo {
+        width: 530px;
+        height: 115px;
+      }
+
+      .globo-caja-personaje {
+        width: 69px;
+        height: 100%;
+        background: rgba(255, 255, 221, 0.25);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 4px 0;
+        box-sizing: border-box;
+        flex-shrink: 0;
+      } 
+
+      #globo-caja-psicologa {
+        width: 80px;
+        height: 100%;
+      }
+
+      .globo-nombre {
+        font-size: 13px;
+      }
+
+      .globo-texto {
+        font-size: 16px;
+      }
+
+      #globo-tito .globo-imagen-personaje {
+        width: 65px;
+      }
+
+      #globo-itzel .globo-imagen-personaje {
+        width: 45px;
+      }
+
+      #globo-psicologa .globo-imagen-personaje {
+        width: 55px;
+      }
+
+      #globo-tito {
+        top: 36%;
+        left: 3%;
+      }
+
+      #globo-psicologa {
+        top: 32%;
+        left: 25%;
+      }
+
+      #globo-itzel {
+        top: 37%;
+        left: 45%;
+      }
+
+      
+      .laptop {
+        top: 62%;
+        left: 45%;
+        width: 4.5%;
+      }
+
+      .agua {
+        top: 62.5%;
+        left: 53%;
+        width: 2.5%;
+      }
+
+      .jarra {
+        top: 53%;
+        left: 77%;
+        width: 6%;
+      }
+
+      .pan {
+        top: 66%;
+        left: 50%;
+        width: 3%;
+      }
+
+      .pan-chico {
+        top: 67.4%;
+        left: 50%;
+        width: 2.7%;
+      }
+
+      #nube-pensamiento {
+        top: 20%;
+        left: 40%;
+        width: 20%;
+      }
+
+      #recuerdo1, #recuerdo2 {
+        top: 1%;
+        left: 15%;
+        width: 72%; 
+      }
+      
+      
+      #color-verde, 
+      #color-amarillo, 
+      #color-naranja, 
+      #color-rojo, 
+      #color-morado, 
+      #color-azul, 
+      #color-cafe,
+      #color-negro,
+      #color-gris,
+      #color-blanco,
+      #color-verde-fuerte,
+      #color-carne,
+      #color-azul-claro,
+      #color-rosa,
+      #borrador {
+        width: 3%;
+      }
+      
+      #color-verde { left: 20.2%; }
+      #color-verde-fuerte { left: 23.6%; }
+      #color-amarillo { left: 27%; }
+      #color-naranja { left: 30.3%; }
+      #color-rojo { left: 33.71%; }
+      #color-morado { left: 37.00%; }
+      #color-rosa { left: 40.22%; }
+      #color-azul { left: 43.55%; }
+      #color-cafe { left: 50.11%; }
+      #color-azul-claro { left: 46.83%; }
+      #color-carne { left: 53.40%; }
+      #color-negro { left: 56.67%; }
+      #color-gris { left: 60%; }
+      #color-blanco { left: 63.4%; }
+      #borrador { left: 66.83%; width: 4.55%; }
+      
+      .done-btn {
+        padding: 18px 22px;
+        font-size: 18px;
+        bottom: 12%;
+        left: 84%;
+      }
+
+      #paleta-colores {
+        top: -1%;
+        left: 7%;
+      }
+
+      #nube-juego {
+        position: absolute;
+        top: 0%;
+        left: 15%;
+        width: 75%;
+      }
+
+      #colorear {
+        position: relative;
+        top: 1%;
+        left: 26%;
+        width: 55%;
+      }
+
+      #colorear svg,
+      #colorear canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    /* Case 5.3: Full Height (>900px) */
+    @media (min-height: 900px) { 
+      #game-canvas {
+        aspect-ratio: 16 / 10;
+      }
+
+       
+      .btn-dialogo img, .btn-sonido img, .btn-galeria img {
+        height: 90px;
+        width: 90px;
+      }
+      
+      .btn-dialogo {
+        top: 15%;
+        left: 5%;
+      }
+      
+      .btn-sonido {
+        top: 15%;
+        right: 5%;
+      }
+      
+      .btn-galeria {
+        bottom: 9%;
+        right: 5%;
+      }
+      
+      
+      #tito1 {
+        top: 48%;
+        left: 3%;
+        width: 10%;
+      }
+      
+      #tito2 {
+        top: 55%;
+        left: 2%;
+        width: 14%;
+      }
+      
+      #tito3, #tito4 {
+        top: 54%;
+        left: 2%;
+        width: 14.5%;
+      }
+      
+      
+      #psicologa1 {
+        top: 32%;
+        left: 41.2%;
+        width: 19%;
+      }
+      
+      #psicologa2 {
+        top: 45.8%;
+        left: 31%;
+        width: 12%;
+      }
+      
+      #psicologa3 {
+        top: 46%;
+        left: 30%;
+        width: 15%;
+      }
+      
+      #psicologa4 {
+        top: 42%;
+        left: 30%;
+        width: 13%;
+      }
+      
+      #psicologa5 {
+        top: 44%;
+        left: 30%;
+        width: 14%;
+      }
+      
+      #psicologa6 {
+        top: 43%;
+        left: 29%;
+        width: 17%;
+      }
+      
+      
+      #itzel1 {
+        top: 56%;
+        right: 17%;
+        width: 13.5%;
+      }
+      
+      #itzel2 {
+        top: 49%;
+        left: 60%;
+        width: 10%;
+      }
+      
+      #itzel3 {
+        top: 49%;
+        left: 59%;
+        width: 10%;
+      }
+      
+      #itzel4 {
+        top: 52%;
+        left: 58%;
+        width: 13%;
+      }
+      
+      #itzel5 {
+        top: 51%;
+        left: 60%;
+        width: 9.2%;
+      }
+      
+      #itzel6 {
+        top: 52%;
+        left: 60%;
+        width: 9.5%;
+      }
+      
+      #itzel7 {
+        top: 51.5%;
+        left: 60%;
+        width: 9.5%;
+      }
+      
+      #itzel8 {
+        top: 52%;
+        left: 60%;
+        width: 9%;
+      }
+      
+      #itzel9 {
+        top: 48%;
+        left: 57%;
+        width: 9.5%;
+      }
+      
+      
+      #abogado {
+        top: 32%;
+        left: 44%;
+        width: 14%;
+      }
+      
+      #abogada {
+        top: 31%;
+        left: 44.3%;
+        width: 13%;
+      }
+      
+      #psicologo {
+        top: 31%;
+        left: 41%;
+        width: 17.5%;
+      }
+      
+      
+      .globo-dialogo {
+        width: 510px;
+        height: 115px;
+      }
+
+      .globo-caja-personaje {
+        width: 80px;
+        height: 100%;
+        background: rgba(255, 255, 221, 0.25);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 4px 0;
+        box-sizing: border-box;
+        flex-shrink: 0;
+      } 
+
+      #globo-caja-psicologa {
+        width: 80px;
+        height: 100%;
+      }
+
+      .globo-nombre {
+        font-size: 13px;
+      }
+
+      .globo-texto {
+        font-size: 16px;
+      }
+
+      #globo-tito .globo-imagen-personaje {
+        width: 70px;
+      }
+
+      #globo-itzel .globo-imagen-personaje {
+        width: 45px;
+      }
+
+      #globo-psicologa .globo-imagen-personaje {
+        width: 60px;
+      }
+
+      #globo-tito {
+        top: 36%;
+        left: 3%;
+      }
+
+      #globo-psicologa {
+        top: 32%;
+        left: 25%;
+      }
+
+      #globo-itzel {
+        top: 37%;
+        left: 45%;
+      }
+
+      
+      .laptop {
+        top: 62%;
+        left: 43%;
+        width: 5.5%;
+      }
+
+      .agua {
+        top: 61.5%;
+        left: 53%;
+        width: 3.5%;
+      }
+
+      .jarra {
+        top: 53%;
+        left: 82%;
+        width: 7%;
+      }
+
+      .pan {
+        top: 66%;
+        left: 49%;
+        width: 4%;
+      }
+
+      .pan-chico {
+        top: 67.4%;
+        left: 50%;
+        width: 2.7%;
+      }
+
+      #nube-pensamiento {
+        top: 20%;
+        left: 37%;
+        width: 25%;
+      }
+
+      #recuerdo1, #recuerdo2 {
+        top: 4%;
+        left: 10%;
+        width: 80%; 
+      }
+      
+      
+      #color-verde, 
+      #color-amarillo, 
+      #color-naranja, 
+      #color-rojo, 
+      #color-morado, 
+      #color-azul, 
+      #color-cafe,
+      #color-negro,
+      #color-gris,
+      #color-blanco,
+      #color-verde-fuerte,
+      #color-carne,
+      #color-azul-claro,
+      #color-rosa,
+      #borrador {
+        width: 4%;
+      }
+      
+      #color-verde { left: 20.2%; }
+      #color-verde-fuerte { left: 24.6%; }
+      #color-amarillo { left: 29%; }
+      #color-naranja { left: 33.3%; }
+      #color-rojo { left: 37.5%; }
+      #color-morado { left: 41.8%; }
+      #color-rosa { left: 46%; }
+      #color-azul { left: 50.3%; }
+      #color-azul-claro { left: 54.6%; }
+      #color-cafe { left: 58.8%; }
+      #color-carne { left: 63%; }
+      #color-negro { left: 67.25%; }
+      #color-gris { left: 71.5%; }
+      #color-blanco { left: 75.8%; }
+      #borrador { left: 80.3%; width: 5%; }
+      
+      .done-btn {
+        padding: 18px 22px;
+        font-size: 20px;
+        bottom: 16%;
+        left: 85%;
+      }
+
+      #paleta-colores {
+        top: 0%;
+        left: -1%
+      }
+
+      #nube-juego {
+        position: absolute;
+        top: 0%;
+        left: 10%;
+        width: 85%;
+      }
+
+      #colorear {
+        position: relative;
+        top: 1%;
+        left: 22%;
+        width: 60%;
+      }
+
+      #colorear svg,
+      #colorear canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
 }
 
 /* ==========================================================================
@@ -5503,9 +7055,69 @@
    Target Width: 1440px - 1539px
    Target Devices: MacBook Air, 19" Monitors (1440x900)
    ========================================================================== */
-@media (min-width: 1440px) and (max-width: 1539px) {
+@media (min-width: 1441px) and (max-width: 1539px) {
+
+    @media (max-height: 679px) {
+      
+      .btn-dialogo img, .btn-sonido img, .btn-galeria img {
+        height: 80px;
+        width: 80px;
+      }
+      
+      .btn-dialogo {
+        top: 19%;
+        left: 18%;
+      }
+      
+      .btn-sonido {
+        top: 19%;
+        right: 18%;
+      }
+      
+      .btn-galeria {
+        bottom: 7%;
+        right: 18%;
+      }
+
+      .jarra {
+        top: 52%;
+        left: 72%
+      }
+
+      #tito2 {
+        top: 44%;
+        width: 11.8%;
+      }
+
+      #tito3, #tito4 {
+        top: 40%;
+        width: 12.3%;
+      }
+
+      #psicologa6{
+        top: 36%;
+        width: 14%;
+      }
+
+      #paleta-colores {
+        top: -3%;
+        left: 2%;
+      }
+
+      #colorear {
+        top: 0%;
+        left: 30%;
+        width: 40%;
+      }
+
+      .toggle-switch {
+        width: 150px;
+        height: 60px;
+      }
+    }
+
     /* Case 5.1: Low Height (<720px) */
-    @media (max-height: 720px) { 
+    @media (max-height: 720px) and (min-height: 680px) { 
        
       .btn-dialogo img, .btn-sonido img, .btn-galeria img {
         height: 80px;
@@ -6120,7 +7732,7 @@
       #color-negro { left: 56.67%; }
       #color-gris { left: 60%; }
       #color-blanco { left: 63.4%; }
-      #borrador { left: 66.83%; width: 3.55%; }
+      #borrador { left: 66.83%; width: 4.55%; }
       
       .done-btn {
         padding: 18px 22px;
@@ -6130,7 +7742,7 @@
       }
 
       #paleta-colores {
-        top: -1.5%;
+        top: -1%;
         left: 7%;
       }
 
@@ -6145,7 +7757,7 @@
         position: relative;
         top: 1%;
         left: 26%;
-        width: 53%;
+        width: 55%;
       }
 
       #colorear svg,
@@ -7454,7 +9066,7 @@
 @media (min-width: 1600px) and (max-width: 1679px) {
     /* Case 7.1: Low Height */    
     @media (max-height: 799px) {
-      
+
       .btn-dialogo img, .btn-sonido img, .btn-galeria img {
         height: 90px;
         width: 90px;
@@ -7474,7 +9086,6 @@
         bottom: 8%;
         right: 16%;
       }
-      
       
       #tito1 {
         top: 42%;
@@ -7680,7 +9291,7 @@
 
       .jarra {
         top: 53%;
-        left: 75%;
+        left: 74%;
         width: 5.6%;
       }
 
@@ -8408,8 +10019,187 @@
    Target Devices: 22" Monitors (1680x1050)
    ========================================================================== */
 @media (min-width: 1680px) and (max-width: 1799px) {
+    @media (max-height: 799px) {
+      .btn-dialogo img, .btn-sonido img, .btn-galeria img {
+        height: 80px;
+        width: 80px;
+      }
+
+      .toggle-switch {
+        width: 200px;
+        height: 70px;
+      }
+
+      #game-canvas {
+        aspect-ratio: 16 / 10;
+      }
+
+      .btn-dialogo {
+        top: 17%;
+        left: 18%; 
+      }
+      
+      .btn-sonido {
+        top: 17%;
+        right: 18%;
+      }
+      
+      .btn-galeria {
+        bottom: 8%;
+        right: 18%;
+      }
+      
+      #tito1 {
+        top: 40%;
+        left: 10%;
+        width: 8.5%; 
+      }
+      
+      #tito2 {
+        top: 45%;
+        left: 10%;
+        width: 12%;
+      }
+      
+      #tito3, #tito4 {
+        top: 43%;
+        left: 9%;
+        width: 12%;
+      }
+      
+      
+      #psicologa1 {
+        top: 30%;
+        left: 41.2%;
+        width: 14.5%;
+      }
+      
+      #psicologa2 {
+        top: 44.5%;
+        left: 34%;
+        width: 9.2%;
+      }
+      
+      #psicologa3 {
+        top: 44%;
+        left: 34%;
+        width: 12%;
+      }
+      
+      #psicologa4 {
+        top: 40%;
+        left: 33.3%;
+        width: 10%;
+      }
+      
+      #psicologa5 {
+        top: 41%;
+        left: 33%;
+        width: 11%;
+      }
+      
+      #psicologa6 {
+        top: 41%;
+        left: 34%;
+        width: 13%;
+      }
+      
+      
+      #itzel1 {
+        top: 50%;
+        right: 23%;
+        width: 10.5%;
+      }
+      
+      #itzel2 {
+        top: 46%;
+        left: 57%;
+        width: 8.2%;
+      }
+      
+      #itzel3 {
+        top: 46%;
+        left: 57%;
+        width: 8.2%;
+      }
+      
+      #itzel4 {
+        top: 50%;
+        left: 56%;
+        width: 10.2%;
+      }
+      
+      #itzel5 {
+        top: 50%;
+        left: 58%;
+        width: 7.2%;
+      }
+      
+      #itzel6 {
+        top: 50%;
+        left: 58%;
+        width: 7.2%;
+      }
+      
+      #itzel7 {
+        top: 48.5%;
+        left: 58.5%;
+        width: 7.8%;
+      }
+      
+      #itzel8 {
+        top: 48%;
+        left: 58%;
+        width: 7.5%;
+      }
+      
+      #itzel9 {
+        top: 43%;
+        left: 55%;
+        width: 8%;
+      }
+      
+      
+      #abogado {
+        top: 30%;
+        left: 44%;
+        width: 10.5%;
+      }
+      
+      #abogada {
+        top: 30%;
+        left: 44.3%;
+        width: 9.5%;
+      }
+      
+      #psicologo {
+        top: 32%;
+        left: 41%;
+        width: 12.5%;
+      }
+
+      .jarra {
+        top: 52%;
+        left: 72%;
+        width: 5.4%;
+      }
+
+      #paleta-colores {
+        top: -1.5%;
+        left: 2%;
+      }
+
+      #colorear {
+        position: relative;
+        top: 0%;
+        left: 30%;
+        width: 43%; 
+      }
+
+    }
+
     /* Case 8.1: Laptop/Short Height */
-    @media (max-height: 899px) {
+    @media (min-height: 800px) and (max-height: 899px) {
       
       .btn-dialogo img, .btn-sonido img, .btn-galeria img {
         height: 90px;
@@ -8430,7 +10220,6 @@
         bottom: 8%;
         right: 13%;
       }
-      
       
       #tito1 {
         top: 43%;
@@ -8710,7 +10499,7 @@
         position: relative;
         top: 1%;
         left: 28%;
-        width: 49%; 
+        width: 46.5%; 
       }
 
       #colorear svg,
@@ -9364,8 +11153,9 @@
    Context: Windows maximized on 1080p with sidebars/borders
    ========================================================================== */
 @media (min-width: 1800px) and (max-width: 1919px) {
+
     /* Case 9.1: Low Height */
-    @media (max-height: 919px) {
+    @media (max-height: 919px) and (min-height: 851px){
       
       .btn-dialogo img, .btn-sonido img, .btn-galeria img {
         height: 100px;
@@ -9666,7 +11456,7 @@
         position: relative;
         top: 1%;
         left: 28%;
-        width: 51%; 
+        width: 50%; 
       }
 
       #colorear svg,
